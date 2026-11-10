@@ -105,7 +105,7 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 	background-color: #444;
 }
 /* Header Section */
-.intro {
+/* .intro {
 	display: table;
 	width: 100%;
 	padding: 0;
@@ -116,28 +116,88 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 	-moz-background-size: cover;
 	background-size: cover;
 	-o-background-size: cover;
+} */
+
+/* BG animation */
+.intro {
+  position: relative;
+  isolation: isolate;                 /* 让 canvas 垫在内容下面，不用改你的子元素 */
+  overflow: hidden;
+  /* 原来的 background-image: url(...) 删掉，换成兜底渐变：
+     WebGL 没起来、或用户关闭动效时显示它 */
+  background-image: linear-gradient(135deg, #B9FFC0, #8ECBFF 50%, #CB9BFF);
 }
+.intro-shader {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  display: block;
+  pointer-events: none;
+  opacity: 0;                          /* 首帧画好后淡入，避免闪一下 */
+  transition: opacity .8s ease;
+}
+/* BG animation */
+
 .intro .overlay {
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,d5dade+100&0.5+0,0+100 */
 	background: -moz-linear-gradient(left, rgba(255,255,255,0.5) 0%, rgba(213,218,222,0) 100%); /* FF3.6-15 */
 	background: -webkit-linear-gradient(left, rgba(255,255,255,0.5) 0%, rgba(213,218,222,0) 100%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(to right, rgba(255,255,255,0.5) 0%, rgba(213,218,222,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ffffff', endColorstr='#00d5dade', GradientType=1 ); /* IE6-9 */
+  	position: relative;
+  	z-index: 1;
 }
 .intro .fa {
 	font-size: 94px;
 	margin-bottom: 40px;
 	color: #fff;
 }
+.intro h1 {
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(64, 63, 78, 0.3), 0 1px 2px rgba(0,0,0,.20);
+}
+
 .intro p {
-	color: #444;
+	/* color: #444; */
+	color: #fff;
 	margin: 10px 0 20px 0;
 	font-size: 22px;
+	text-shadow: 0 1px 8px rgba(64, 63, 78, 0.3);
 }
 header .intro-text {
-	padding-top: 250px;
+	padding-top: 200px;
 	padding-bottom: 200px;
 }
+
+/* ===== intro 按钮白色磨砂 ===== */
+.intro .btn-custom {
+  color: #fff;
+  background-color: rgba(255,255,255,.18);
+  border: 1px solid rgba(255,255,255,.55);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  backdrop-filter: blur(12px) saturate(160%);
+  box-shadow: 0 4px 18px rgba(0,0,0,.12),
+              inset 0 1px 0 rgba(255,255,255,.45);
+  text-shadow: 0 1px 4px rgba(0,0,0,.22);
+  transition: all .35s;
+  border-radius: 12px;   /* ← 新增：圆角，数值越大越圆 */
+}
+
+.intro .btn-custom:hover,
+.intro .btn-custom:focus,
+.intro .btn-custom.focus,
+.intro .btn-custom:active,
+.intro .btn-custom.active {
+  color: #333;
+  background-color: rgba(255,255,255,.80);
+  border-color: #fff;
+  box-shadow: 0 8px 24px rgba(0,0,0,.20),
+              inset 0 1px 0 rgba(255,255,255,.60);
+  border-radius: 12px;   /* ← 新增 */
+}
+
 /* Portfolio Section */
 #portfolio {
 	padding: 40px 0 100px 0;
@@ -345,4 +405,29 @@ color: #777;
 #footer p {
 	font-size: 24px;
 	color: #bba581;
+}
+
+/* ===== intro 右侧竖版卡通图 ===== */
+.intro .intro-figure {
+  position: absolute;
+  right: 18%;              /* 距右边距离 */
+  bottom: 4%;              /* 底部贴齐，竖图更有"站"感 */
+  height: 80%;            /* 高度占 intro 的 84%，竖图主控维度 */
+  width: auto;
+  max-width: 30%;         /* 防止太宽压到文字 */
+  object-fit: contain;
+  object-position: bottom center;
+  z-index: 2;             /* 盖在 overlay 之上，不被渐变蒙版压暗 */
+  pointer-events: none;   /* 不挡按钮点击 */
+  /* filter: drop-shadow(0 18px 36px rgba(0,0,0,.28)); */
+}
+
+/* 桌面端给文字列右侧留点余量，避免和图片打架（可选） */
+@media (min-width: 992px) {
+  .intro-text { padding-right: 40px; }
+}
+
+/* 平板/手机隐藏，避免挡住白字和按钮 */
+@media (max-width: 991px) {
+  .intro .intro-figure { display: none; }
 }

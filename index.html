@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>李伟华-产品经理</title>
-<meta name="description" content="liweihua portfolio">
-<meta name="author" content="liweihua">
+<meta name="description" content="李伟华 portfolio">
+<meta name="author" content="李伟华">
 
 <script>
   var _hmt = _hmt || [];
@@ -16,6 +16,103 @@
     s.parentNode.insertBefore(hm, s);
   })();
 </script>
+
+<!-- ========== 右下角固定图标 开始 ========== -->
+<style>
+  .float-icon {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: 80px;
+    height: 80px;
+    z-index: 9990;
+    display: block;
+    background: none;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* SVG 本身呼吸 */
+  .float-icon svg {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+    overflow: visible;
+    transform-origin: 50% 50%;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, .2));
+    -webkit-animation: floatBreath 2s ease-in-out infinite !important;
+    animation: floatBreath 2s ease-in-out infinite !important;
+  }
+
+  @-webkit-keyframes floatBreath {
+    0%, 100% { -webkit-transform: scale(1);   transform: scale(1); }
+    50%      { -webkit-transform: scale(1.05); transform: scale(1.05); }
+  }
+  @keyframes floatBreath {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.05); }
+  }
+
+  /* 悬停：停止 */
+  .float-icon:hover svg {
+    -webkit-animation-play-state: paused !important;
+    animation-play-state: paused !important;
+  }
+
+  @media (max-width: 767px) {
+    .float-icon {
+      right: 16px;
+      bottom: 16px;
+      width: 68px;
+      height: 68px;
+    }
+  }
+
+  /* ===== 渐变背景动画（匹配你当前 SVG 的 id）===== */
+
+/* 底层径向渐变：薄荷绿 → 天蓝 循环流动 */
+#radialGradient-1 stop:nth-child(1) {
+  animation: gradStopA 4s ease-in-out infinite;
+}
+#radialGradient-1 stop:nth-child(2) {
+  animation: gradStopB 4s ease-in-out infinite;
+}
+
+@keyframes gradStopA {
+  0%, 100% { stop-color: #B9FFC0; }
+  33%      { stop-color: #FFE29A; }
+  66%      { stop-color: #FFB6E1; }
+}
+@keyframes gradStopB {
+  0%, 100% { stop-color: #8ECBFF; }
+  33%      { stop-color: #B69BFF; }
+  66%      { stop-color: #7FE3D0; }
+}
+
+/* 上层线性渐变（紫色那层） */
+#linearGradient-2 stop:nth-child(1) {
+  animation: gradStopC 4s ease-in-out infinite;
+}
+@keyframes gradStopC {
+  0%, 100% { stop-color: #CB9BFF; }
+  50%      { stop-color: #FF9BD2; }
+}
+
+/* 图案里的星星渐变：蓝 ↔ 紫 */
+#linearGradient-3 stop:nth-child(1) {
+  animation: gradStopD 4s ease-in-out infinite;
+}
+@keyframes gradStopD {
+  0%, 100% { stop-color: #596AF6; }
+  50%      { stop-color: #A04DF6; }
+}
+
+/* 悬停时渐变也一起停住 */
+.float-icon:hover svg stop {
+  animation-play-state: paused !important;
+}
+</style>
 
 <!-- Favicons
     ================================================== -->
@@ -44,9 +141,42 @@
     <![endif]-->
 </head>
 <body>
+
+<a href="https://liweihuay.streamlit.app/" target="_blank" class="float-icon" title="RAG Chotbox" aria-label="RAG Chotbox">
+  <!-- 消息气泡 SVG 图标 -->
+<svg width="156px" height="156px" viewBox="0 0 156 156" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Click Me</title>
+    <defs>
+        <radialGradient cx="73.2606895%" cy="17.0289999%" fx="73.2606895%" fy="17.0289999%" r="50.1926632%" id="radialGradient-1">
+            <stop stop-color="#B9FFC0" offset="0%"></stop>
+            <stop stop-color="#8ECBFF" offset="100%"></stop>
+        </radialGradient>
+        <linearGradient x1="38.1999911%" y1="103.936539%" x2="57.5984616%" y2="13.7704744%" id="linearGradient-2">
+            <stop stop-color="#CB9BFF" offset="0%"></stop>
+            <stop stop-color="#86C7FE" stop-opacity="0.162623265" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" fill-rule="nonzero">
+            <circle id="Oval" fill="url(#radialGradient-1)" cx="78" cy="78" r="78"></circle>
+            <circle id="Oval-Copy" fill="url(#linearGradient-2)" cx="78" cy="78" r="78"></circle>
+            <g id="chatboxes" transform="translate(37, 27)" fill="#FFFFFF">
+                <path d="M43.4294118,57.3973384 C42.9705882,57.0756654 42.1588236,56.5931559 40.3411764,56.5931559 L19.8529412,56.5931559 C13.7294118,56.5931559 8.47058823,51.9288973 8.47058823,46.0136882 L8.47058823,28 L8.15294118,28 C3.51176471,28 0,31.6634981 0,36.1311787 L0,59.16654 C0,63.6342205 3.77647059,66.4220532 8.41764706,66.4220532 L11.2941177,66.4220532 L11.2941177,75 L20.6647059,66.9581749 C21,66.7079848 21.6,66.4220532 22.9941177,66.4220532 L38.8411764,66.4220532 C42.9,66.4220532 47.2058823,64.3847908 48,60.703422 L43.4294118,57.3973384 Z" id="Path"></path>
+                <path d="M63.5625,0 C69.8803571,0 75,4.79659091 75,10.7028409 L75,40.8247159 C75,46.7309659 69.8803571,51.5454545 63.5625,51.5454545 L60.4761905,51.5454545 L60.4761905,63 L46.9145833,52.2971591 C46.4607143,51.9571023 45.6255952,51.5454545 43.7375,51.5454545 L25.3830357,51.5454545 C19.0833333,51.5454545 14,46.7309659 14,40.8068182 L14,10.7028409 C14,4.79659091 17.8125,0 24.1122024,0 L63.5625,0 Z M33.479064,29 C33.0142857,29 32.6918719,29.2947498 32.5118227,29.8884005 C32.1726601,31.6693529 31.8879311,32.9894995 31.6576355,33.8363859 C31.4469489,34.639309 30.8547153,35.2900008 30.0706897,35.5799756 C29.270936,35.9162393 27.8472907,36.2566545 25.8081282,36.5887668 C25.2679803,36.642735 25,36.949939 25,37.51453 C25,38.0293041 25.2847291,38.3448108 25.8458128,38.4444444 C27.8891627,38.7308913 29.3128079,39.0505495 30.1083744,39.4158731 C30.8764911,39.7154894 31.452798,40.36254 31.6576355,41.1553114 C31.8879311,41.9814408 32.1768473,43.2974359 32.5118227,45.1074481 C32.6834976,45.7010989 33.0142857,46 33.479064,46 C33.9940888,46 34.3165024,45.7384615 34.4463055,45.2236874 C34.6514778,43.8537241 34.9362069,42.4962149 35.3004927,41.1553114 C35.5355111,40.353244 36.1372614,39.7074322 36.9251232,39.4117217 C37.75,39.0505495 39.1736454,38.7267399 41.1834976,38.4444444 C41.7278325,38.3448107 42,38.029304 42,37.5186813 C42,36.9748474 41.7278326,36.6634921 41.1834976,36.5887668 C39.1736454,36.2525031 37.75,35.9162393 36.9251232,35.5799756 C36.1379311,35.2893773 35.5349754,34.6417583 35.3004927,33.8363859 C35.0366995,32.9894995 34.7603449,31.6693529 34.4421183,29.8884005 C34.3165024,29.2905983 33.9940887,29 33.479064,29 Z M48.0184404,6 C47.3177052,6 46.8751356,6.3764791 46.6948295,7.1294371 C46.2891407,9.5012549 45.8875498,11.4882275 45.4777631,13.0987211 C45.1733566,14.4847788 44.6911097,15.8237734 44.0435098,17.0810327 C43.4698083,18.1142584 42.6625287,18.9843433 41.6913342,19.6201745 C40.7283355,20.2392733 39.482584,20.7621609 37.9417862,21.180471 C36.0301384,21.6371589 34.0959091,21.989043 32.1474027,22.2346122 C31.3811016,22.3350066 31,22.7491335 31,23.4769929 C31,24.2592326 31.3811016,24.690092 32.1392069,24.7653878 C35.0486923,25.0289231 37.3721827,25.4305008 39.113776,25.9784869 C40.8594673,26.4971914 42.2117633,27.2919804 43.1706641,28.3586709 C44.129565,29.3960799 44.8507894,30.8559819 45.3302399,32.7300108 C45.9307172,35.0632308 46.3864844,37.4327773 46.6948295,39.8245488 C46.8177655,40.6067885 47.2603351,40.9958514 48.0184404,40.9958514 C48.6781969,41 49.0838858,40.6235209 49.2355069,39.8705629 C49.7395445,36.9800407 50.2435821,34.6416876 50.7558154,32.8429544 C51.2803422,31.0233058 52.0138604,29.609418 52.9481741,28.5929246 C53.8824877,27.5471495 55.2101965,26.7607267 56.9313005,26.2085574 C58.6442088,25.6647544 60.9472098,25.1836978 63.82801,24.7653878 C64.610703,24.6900921 65,24.2592327 65,23.4769929 C65,22.7491335 64.606605,22.3350066 63.82801,22.2346122 C61.525009,21.9166965 59.5949138,21.5569499 58.0295288,21.1386399 C56.4641437,20.724513 55.1733157,20.1890761 54.1611426,19.5406956 C53.1735568,18.892315 52.3826684,18.0473288 51.7720863,17.0015538 C51.1656021,15.9390463 50.6779559,14.6088203 50.2927564,13.0276085 C49.9444378,11.4380304 49.5879234,9.4845226 49.2355069,7.1712681 C49.1330602,6.3932115 48.7273714,6 48.0184404,6 Z" id="Combined-Shape"></path>
+            </g>
+            <text id="AI-DEMO" fill="#FFFFFF" font-family="ArialRoundedMTBold, Arial Rounded MT Bold" font-size="26" font-weight="normal">
+                <tspan x="24" y="123">AI DEMO</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
+
+</a>
+
 <!-- Header -->
 <header id="header">
   <div class="intro">
+    <canvas class="intro-shader" data-style="water" aria-hidden="true"></canvas>
     <div class="overlay">
       <div class="container">
         <div class="row">
@@ -65,10 +195,12 @@
 
             </div>
           </div>
-        </div>©
+        </div>
       </div>
     </div>
+    <img src="img/cartoon.png" class="intro-figure" alt="" aria-hidden="true">
   </div>
+<script src="js/banner.js" defer></script>
 </header>
 <div class="tlinks">Collect from <a href="http://"  title=""></a></div>
 <!-- Portfolio Section -->
@@ -611,7 +743,7 @@
 
 <div id="footer">
   <div class="container">
-    <p>Phone:&nbsp;&nbsp;<b>13538924552</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email:&nbsp;&nbsp;<b>liweihuay@163.com</b></p>
+    <p>Phone:&nbsp;&nbsp;<b>13538924552</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email:&nbsp;&nbsp;<b>y@163.com</b></p>
   </div>
 </div>
 <script type="text/javascript" src="js/jquery.1.11.1.js"></script> 
