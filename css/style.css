@@ -182,7 +182,7 @@ header .intro-text {
               inset 0 1px 0 rgba(255,255,255,.45);
   text-shadow: 0 1px 4px rgba(0,0,0,.22);
   transition: all .35s;
-  border-radius: 12px;   /* ← 新增：圆角，数值越大越圆 */
+  border-radius: 2px;   /* ← 新增：圆角，数值越大越圆 */
 }
 
 .intro .btn-custom:hover,
@@ -195,7 +195,7 @@ header .intro-text {
   border-color: #fff;
   box-shadow: 0 8px 24px rgba(0,0,0,.20),
               inset 0 1px 0 rgba(255,255,255,.60);
-  border-radius: 12px;   /* ← 新增 */
+  border-radius: 2px;   /* ← 新增 */
 }
 
 /* Portfolio Section */
