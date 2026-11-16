@@ -6,8 +6,8 @@
   /* ===== 两套预设，想改效果只改这里 ===== */
   var PRESETS = {
     glass: {                           // 条纹玻璃（颜色取自你的图标）
-      colors: ['#b5d36b', '#24accf', '#c8ac48', '#3144e7', '#ef57e5'],
-      bg: '#3c9df3', glass: 0.4, ribs: 26, speed: 0.6, sharp: 4.0, grain: 0.01, glow: 0.10
+      colors: ['#9df32c', '#39f1eb', '#d7d725', '#293dec', '#ed3ee2'],
+      bg: '#3c9df3', glass: 0.2, ribs: 40, speed: 1.0, sharp: 2.4, grain: 0.0, glow: 0.10
     },
     dreamy: {                          // 柔和粉彩，无颗粒
       colors: ['#FFE14D', '#FF8FC2', '#3E8BFF', '#FFC2DA', '#FF9E5E'],
