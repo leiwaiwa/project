@@ -7,7 +7,7 @@
   var PRESETS = {
     glass: {                           // 条纹玻璃（颜色取自你的图标）
       colors: ['#d7d725','#9df32c', '#26e7e1',  '#293dec', '#ed3ee2'],
-      bg: '#3c48f3', glass: 0.18, ribs: 40, speed: 1.0, sharp: 3.4, grain: 0.0, glow: 0.10
+      bg: '#e22b62', glass: 0.18, ribs: 40, speed: 1.0, sharp: 3.2, grain: 0.0, glow: 0.10
     },
     dreamy: {                          // 柔和粉彩，无颗粒
       colors: ['#FFE14D', '#FF8FC2', '#3E8BFF', '#FFC2DA', '#FF9E5E'],
